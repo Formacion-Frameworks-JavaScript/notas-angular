@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public cargando = false;
+  public mostrarFormulario = '';
 }
