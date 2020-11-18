@@ -5,5 +5,5 @@
       ({{porcentaje | number:"0.2-2"}}%)
     </ng-container>
   </div>
-  <i class="fa icono-status" [class]="clasesIconos()"></i>
+  <i *ngIf="conIcono" class="fa icono-status" [class]="clasesIconos()"></i>
 </div>

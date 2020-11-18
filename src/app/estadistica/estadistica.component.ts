@@ -14,6 +14,8 @@ export class EstadisticaComponent implements OnInit {
   @Input()
   public titulo = '';
   @Input()
+  public conIcono: false;
+  @Input()
   public truncado: boolean;
 
   constructor() { }

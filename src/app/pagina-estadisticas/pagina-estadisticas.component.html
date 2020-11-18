@@ -1,1 +1,28 @@
-<p>pagina-estadisticas works!</p>
+<main class="container">
+  <div class="row totales">
+    <div class="col">
+      <div class="card">
+        <div class="header">
+          <h2>Estadísticas</h2>
+        </div>
+        <div class="card-body row">
+          <div class="col">
+            <not-estadistica [dato]="totales.media" titulo="Nota media" [truncado]="true" [conIcono]="true">
+            </not-estadistica>
+          </div>
+          <div class="col">
+            <not-estadistica [dato]="totales.maxima" titulo="Máxima nota" [conIcono]="true"></not-estadistica>
+          </div>
+          <div class="col">
+            <not-estadistica [dato]="totales.nAprobados" titulo="Aprobados" [porcentaje]="totales.pAprobados">
+            </not-estadistica>
+          </div>
+          <div class="col">
+            <not-estadistica [dato]="totales.nSuspensos" titulo="Suspensos" [porcentaje]="totales.pSuspensos">
+            </not-estadistica>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

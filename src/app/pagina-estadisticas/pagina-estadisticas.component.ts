@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Nota } from '../datos/nota-interface';
+import { EstadisticasService } from '../estadisticas.service';
+import { NotasService } from '../notas.service';
 
 @Component({
   selector: 'not-pagina-estadisticas',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaginaEstadisticasComponent implements OnInit {
 
-  constructor() { }
+  public notas: Nota[];
+
+  public totales;
+
+  constructor(private notasService: NotasService, private estadisticasService: EstadisticasService) { }
 
   ngOnInit(): void {
+    this.notasService.$notas.subscribe(notas => {
+      this.notas = notas;
+      this.totales = this.estadisticasService.calculaTotales(notas);
+    });
   }
 
 }
