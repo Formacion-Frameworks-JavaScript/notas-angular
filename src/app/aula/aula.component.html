@@ -19,28 +19,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr class="table-danger">
-            <td>Mario</td>
-            <td>González</td>
+          <tr *ngFor="let alumno of notas" [class.table-danger]="alumno.nota < 5"
+            [class.table-success]="alumno.nota >= 5">
+            <td>{{alumno.nombre}}</td>
+            <td>{{alumno.apellido}}</td>
             <td class="text-center">
-              <span>4</span>
-              <div class="cambia-nota" hidden>
-                <input autoFocus class="form-control" type="number" />
-                <i class="fa fa-times-circle"></i>
-                <i class="fa fa-check-circle"></i>
-              </div>
-            </td>
-            <td>
-              <a href="#" class="borrar">
-                <i class="fa fa-times-circle"></i>
-              </a>
-            </td>
-          </tr>
-          <tr class="table-success">
-            <td>Juan</td>
-            <td>González</td>
-            <td class="text-center">
-              <span>8</span>
+              <span>{{alumno.nota}}</span>
               <div class="cambia-nota" hidden>
                 <input autoFocus class="form-control" type="number" />
                 <i class="fa fa-times-circle"></i>

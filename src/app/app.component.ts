@@ -21,6 +21,10 @@ export class AppComponent implements OnInit {
     this.mostrarFormulario = '';
   }
 
+  public notasPorAula(letra: string): Nota[] {
+    return this.notas.filter(nota => nota.aula === letra);
+  }
+
   public ngOnInit(): void {
     this.notas = notasJSON.notas;
     this.letrasAulas = this.notas

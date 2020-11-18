@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Nota } from '../datos/nota-interface';
 
 @Component({
   selector: 'not-aula',
@@ -11,6 +12,8 @@ export class AulaComponent implements OnInit {
   public letra = '';
   @Input()
   public mostrarFormulario = '';
+  @Input()
+  public notas: Nota[] = [];
 
   @Output()
   public abrirFormulario = new EventEmitter<string>();
