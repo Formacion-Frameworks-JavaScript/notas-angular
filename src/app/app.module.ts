@@ -10,6 +10,7 @@ import { NotaComponent } from './nota/nota.component';
 import { NuevaNotaComponent } from './nueva-nota/nueva-nota.component';
 import { TotalesComponent } from './totales/totales.component';
 import { EstadisticaComponent } from './estadistica/estadistica.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { EstadisticaComponent } from './estadistica/estadistica.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [],

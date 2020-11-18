@@ -1,11 +1,11 @@
 <td>{{alumno.nombre}}</td>
 <td>{{alumno.apellido}}</td>
 <td class="text-center">
-  <span>{{alumno.nota}}</span>
-  <div class="cambia-nota" hidden>
-    <input autoFocus class="form-control" type="number" />
-    <i class="fa fa-times-circle"></i>
-    <i class="fa fa-check-circle"></i>
+  <span (click)="edita()">{{alumno.nota}}</span>
+  <div *ngIf="editando" class="cambia-nota">
+    <input autoFocus [(ngModel)]="nuevaNota" name="nuevaNota" class="form-control" type="number" />
+    <i class="fa fa-times-circle" (click)="desedita()"></i>
+    <i class="fa fa-check-circle" (click)="grabaNuevaNota()"></i>
   </div>
 </td>
 <td>
