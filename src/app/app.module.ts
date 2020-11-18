@@ -11,6 +11,9 @@ import { NuevaNotaComponent } from './nueva-nota/nueva-nota.component';
 import { TotalesComponent } from './totales/totales.component';
 import { EstadisticaComponent } from './estadistica/estadistica.component';
 import { FormsModule } from '@angular/forms';
+import { PaginaNotasComponent } from './pagina-notas/pagina-notas.component';
+import { PaginaEstadisticasComponent } from './pagina-estadisticas/pagina-estadisticas.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { FormsModule } from '@angular/forms';
     NotaComponent,
     NuevaNotaComponent,
     TotalesComponent,
-    EstadisticaComponent
+    EstadisticaComponent,
+    PaginaNotasComponent,
+    PaginaEstadisticasComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

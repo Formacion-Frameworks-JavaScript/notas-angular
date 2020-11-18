@@ -5,21 +5,24 @@
         <span>Nueva nota aula {{letraFormulario}}</span>
         <i (click)="onCerrarFormulario()" class="fa fa-minus-circle"></i>
       </div>
-      <form class="card-body">
+      <form class="card-body" (ngSubmit)="enviaFormulario()" #formNota="ngForm">
         <div class="form-group">
           <label for="nombre">Nombre:</label>
-          <input type="text" class="form-control" id="nombre" required />
+          <input type="text" name="nombre" [(ngModel)]="nuevaNota.nombre" class="form-control" id="nombre" required />
         </div>
         <div class="form-group">
           <label for="apellidos">Apellidos:</label>
-          <input type="text" class="form-control" id="apellidos" required />
+          <input type="text" name="apellido" [(ngModel)]="nuevaNota.apellido" class="form-control" id="apellidos"
+            required />
         </div>
         <div class="form-group">
           <label for="nota">Nota:</label>
-          <input type="number" class="form-control form-control-sm" id="nota" required />
+          <input type="number" name="nota" [(ngModel)]="nuevaNota.nota" class="form-control form-control-sm" id="nota"
+            required />
         </div>
-        <button class="btn btn-primary">añadir</button>
+        <button class="btn btn-primary" [disabled]="formNota.invalid">añadir</button>
       </form>
+      <pre>{{nuevaNota | json}}</pre>
     </div>
   </div>
 </div>
