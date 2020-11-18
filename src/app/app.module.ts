@@ -9,6 +9,7 @@ import { NavegacionComponent } from './navegacion/navegacion.component';
 import { NotaComponent } from './nota/nota.component';
 import { NuevaNotaComponent } from './nueva-nota/nueva-nota.component';
 import { TotalesComponent } from './totales/totales.component';
+import { EstadisticaComponent } from './estadistica/estadistica.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { TotalesComponent } from './totales/totales.component';
     NavegacionComponent,
     NotaComponent,
     NuevaNotaComponent,
-    TotalesComponent
+    TotalesComponent,
+    EstadisticaComponent
   ],
   imports: [
     BrowserModule,

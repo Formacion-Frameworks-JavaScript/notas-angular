@@ -1,0 +1,9 @@
+<div class="card">
+  <div class="card-header">{{titulo}}</div>
+  <div class="card-body numbers">{{truncado ? (dato | number:"0.2-2") : dato}}<ng-container
+      *ngIf="porcentaje !== undefined">
+      ({{porcentaje | number:"0.2-2"}}%)
+    </ng-container>
+  </div>
+  <i class="fa icono-status" [class]="clasesIconos()"></i>
+</div>

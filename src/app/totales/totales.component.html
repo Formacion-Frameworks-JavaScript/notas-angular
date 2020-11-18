@@ -1,1 +1,20 @@
-<p>totales works!</p>
+<div class="card-footer totales">
+  <div class="row">
+    <div class="col">
+      <not-estadistica [dato]="totales.media" titulo="Nota media" [truncado]="true"></not-estadistica>
+    </div>
+    <div class="col">
+      <not-estadistica [dato]="totales.maxima" titulo="Máxima nota" [truncado]="true"></not-estadistica>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <not-estadistica [dato]="totales.nAprobados" titulo="Aprobados" [porcentaje]="totales.pAprobados">
+      </not-estadistica>
+    </div>
+    <div class="col">
+      <not-estadistica [dato]="totales.nAprobados" titulo="Suspensos" [porcentaje]="totales.pSuspensos">
+      </not-estadistica>
+    </div>
+  </div>
+</div>

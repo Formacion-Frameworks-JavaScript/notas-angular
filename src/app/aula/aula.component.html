@@ -1,61 +1,28 @@
-<div class="col">
-  <div class="card">
-    <div class="header row">
-      <h2 class="col-10">Aula {{letra}} <span>(2 alumnos)</span></h2>
-      <div *ngIf="!mostrarFormulario" class="col-2 anyadir">
-        <a href="#" (click)="onAbrirFormulario($event)">
-          <i class="fa fa-plus-circle"></i>
-        </a>
-      </div>
-    </div>
-    <div class="card-body">
-      <table class="table table-bordered tabla-alumnos">
-        <thead>
-          <tr>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Nota</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let alumno of notas" [class.table-danger]="alumno.nota < 5"
-            [class.table-success]="alumno.nota >= 5" [alumno]="alumno" not-nota>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="card-footer totales">
-      <div class="row">
-        <div class="col">
-          <div class="card">
-            <div class="card-header">Nota media</div>
-            <div class="card-body numbers">4.5</div>
-            <i class="fa fa-smile icono-status icono-ok"></i>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card">
-            <div class="card-header">Máxima nota</div>
-            <div class="card-body numbers">4.5</div>
-            <i class="fa fa-frown icono-status icono-no-ok"></i>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <div class="card">
-            <div class="card-header">Aprobados</div>
-            <div class="card-body numbers">40 (100%)</div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card">
-            <div class="card-header">Suspensos</div>
-            <div class="card-body numbers">4 (30%)</div>
-          </div>
-        </div>
-      </div>
+<div class="card">
+  <div class="header row">
+    <h2 class="col-10">Aula {{letra}} <span>(2 alumnos)</span></h2>
+    <div *ngIf="!mostrarFormulario" class="col-2 anyadir">
+      <a href="#" (click)="onAbrirFormulario($event)">
+        <i class="fa fa-plus-circle"></i>
+      </a>
     </div>
   </div>
+  <div class="card-body">
+    <table class="table table-bordered tabla-alumnos">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Nota</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let alumno of notas" [class.table-danger]="alumno.nota < 5" [class.table-success]="alumno.nota >= 5"
+          [alumno]="alumno" not-nota>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <not-totales [notas]="notas"></not-totales>
 </div>
