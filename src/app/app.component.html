@@ -3,7 +3,7 @@
   <not-nueva-nota *ngIf="mostrarFormulario" [letraFormulario]="mostrarFormulario"
     (cerrarFormulario)="cierraFormulario()"></not-nueva-nota>
   <div class="row">
-    <not-aula class="col" *ngFor="let letraAula of letrasAulas" [letra]="letraAula" [notas]="notasPorAula(letraAula)"
+    <not-aula class="col" *ngFor="let letraAula of letrasAulas" [letra]="letraAula"
       (abrirFormulario)="abreFormulario($event)" [mostrarFormulario]="mostrarFormulario">
     </not-aula>
   </div>

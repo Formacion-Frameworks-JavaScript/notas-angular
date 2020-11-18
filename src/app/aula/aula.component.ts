@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Nota } from '../datos/nota-interface';
+import { NotasService } from '../notas.service';
 
 @Component({
   selector: 'not-aula',
@@ -12,13 +13,13 @@ export class AulaComponent implements OnInit {
   public letra = '';
   @Input()
   public mostrarFormulario = '';
-  @Input()
+
   public notas: Nota[] = [];
 
   @Output()
   public abrirFormulario = new EventEmitter<string>();
 
-  constructor() { }
+  constructor(private notasService: NotasService) { }
 
   public onAbrirFormulario(e: Event): void {
     e.preventDefault();
@@ -26,6 +27,7 @@ export class AulaComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.notasService.$notas.subscribe(notas => this.notas = notas.filter(nota => nota.aula === this.letra));
   }
 
 }

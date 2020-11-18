@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Nota } from './datos/nota-interface';
 import notasJSON from './datos/notas.json';
+import { NotasService } from './notas.service';
 
 @Component({
   selector: 'not-root',
@@ -8,10 +9,12 @@ import notasJSON from './datos/notas.json';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  public cargando = false;
+  public cargando = true;
   public mostrarFormulario = '';
   public letrasAulas = [];
   public notas: Nota[] = [];
+
+  constructor(private notasService: NotasService) { }
 
   public abreFormulario(letra: string): void {
     this.mostrarFormulario = letra;
@@ -26,9 +29,12 @@ export class AppComponent implements OnInit {
   }
 
   public ngOnInit(): void {
-    this.notas = notasJSON.notas;
-    this.letrasAulas = this.notas
-      .map(nota => nota.aula).
-      filter((letra, i, letras) => letras.indexOf(letra) === i).sort();
+    this.notasService.$notas.subscribe(notas => {
+      this.notas = notas;
+      this.letrasAulas = this.notas
+        .map(nota => nota.aula).
+        filter((letra, i, letras) => letras.indexOf(letra) === i).sort();
+      this.cargando = false;
+    });
   }
 }
