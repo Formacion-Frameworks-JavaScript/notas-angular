@@ -13,6 +13,14 @@ export class AppComponent implements OnInit {
   public letrasAulas = [];
   public notas: Nota[] = [];
 
+  public abreFormulario(letra: string): void {
+    this.mostrarFormulario = letra;
+  }
+
+  public cierraFormulario(): void {
+    this.mostrarFormulario = '';
+  }
+
   public ngOnInit(): void {
     this.notas = notasJSON.notas;
     this.letrasAulas = this.notas

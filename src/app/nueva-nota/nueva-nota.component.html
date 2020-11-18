@@ -2,8 +2,8 @@
   <div class="col-12 col-lg-8 offset-lg-2">
     <div class="card">
       <div class="card-header">
-        <span>Nueva nota aula A</span>
-        <i class="fa fa-minus-circle"></i>
+        <span>Nueva nota aula {{letraFormulario}}</span>
+        <i (click)="onCerrarFormulario()" class="fa fa-minus-circle"></i>
       </div>
       <form class="card-body">
         <div class="form-group">

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'not-nueva-nota',
@@ -7,7 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NuevaNotaComponent implements OnInit {
 
+  @Input()
+  public letraFormulario = '';
+
+  @Output()
+  public cerrarFormulario = new EventEmitter<void>();
+
   constructor() { }
+
+  public onCerrarFormulario(): void {
+    this.cerrarFormulario.emit();
+  }
 
   ngOnInit(): void {
   }

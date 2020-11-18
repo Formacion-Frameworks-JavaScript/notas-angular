@@ -1,8 +1,11 @@
 <not-navegacion></not-navegacion>
 <main class="container">
-  <not-nueva-nota *ngIf="mostrarFormulario"></not-nueva-nota>
+  <not-nueva-nota *ngIf="mostrarFormulario" [letraFormulario]="mostrarFormulario"
+    (cerrarFormulario)="cierraFormulario()"></not-nueva-nota>
   <div class="row">
-    <not-aula *ngFor="let letraAula of letrasAulas" [letra]="letraAula"></not-aula>
+    <not-aula *ngFor="let letraAula of letrasAulas" [letra]="letraAula" (abrirFormulario)="abreFormulario($event)"
+      [mostrarFormulario]="mostrarFormulario">
+    </not-aula>
   </div>
 </main>
 <not-loading *ngIf="cargando"></not-loading>

@@ -2,8 +2,8 @@
   <div class="card">
     <div class="header row">
       <h2 class="col-10">Aula {{letra}} <span>(2 alumnos)</span></h2>
-      <div class="col-2 anyadir">
-        <a href="#">
+      <div *ngIf="!mostrarFormulario" class="col-2 anyadir">
+        <a href="#" (click)="onAbrirFormulario($event)">
           <i class="fa fa-plus-circle"></i>
         </a>
       </div>
