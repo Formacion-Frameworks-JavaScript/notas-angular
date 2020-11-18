@@ -1,1 +1,15 @@
-<p>nota works!</p>
+<td>{{alumno.nombre}}</td>
+<td>{{alumno.apellido}}</td>
+<td class="text-center">
+  <span>{{alumno.nota}}</span>
+  <div class="cambia-nota" hidden>
+    <input autoFocus class="form-control" type="number" />
+    <i class="fa fa-times-circle"></i>
+    <i class="fa fa-check-circle"></i>
+  </div>
+</td>
+<td>
+  <a href="#" class="borrar">
+    <i class="fa fa-times-circle"></i>
+  </a>
+</td>
