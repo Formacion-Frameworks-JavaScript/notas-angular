@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  urlAPI: 'https://server-notas-api.herokuapp.com/notas/'
 };
